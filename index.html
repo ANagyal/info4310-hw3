@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>INFO 4310 - HW3</title>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="https://d3js.org/topojson.v3.min.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="left-cont">
+				<svg id="map" width="900" height="700"></svg>
+			</div>
+			<div id="right-cont">
+				<div id="filter-cont">
+					<div class="slider-cont" id="bed-cont"><h5>Bedrooms</h5></div>
+					<div class="slider-cont" id="bath-cont"><h5>Bathrooms</h5></div>
+					<div class="slider-cont" id="room-cont"><h5>Total Rooms</h5></div>
+					<div class="slider-cont" id="size-cont"><h5>Finished Size (Sq. Ft)</h5></div>
+					<div class="slider-cont" id="lot-size-cont"><h5>Lot Size (Sq. Ft)</h5></div>
+					<div>
+						<label for="ptype-slider"><h5>Property Type</h5></label>
+						<input type="range" class="slider-input" id="ptype-slider" />
+					</div>
+					<div>
+						<label for="age-slider"><h5>Year Built (After):</h5></label>
+						<input type="range" class="slider-input" id="age-slider" />
+					</div>
+					<div class="slider-cont" id="rent-cont"><h5>Rental Amount</h5></div>
+					<div class="slider-cont" id="price-cont"><h5>Total Price</h5></div>
+					<div class="slider-cont" id="tax-cont"><h5>Property Tax Amount</h5></div>
+				</div>
+				<div id="saved-cont"></div>
+			</div>
+		</div>
+		<script type="module" src="scripts/explore.js"></script>
+		<script src="scripts/dual-slider.js"></script>
+	</body>
+	<style>
+		* {
+			font-family: Lexend, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+				Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			font-weight: 400;
+		}
+
+		body {
+			padding: 0;
+			margin: 0px 5px;
+			height: 165vh;
+		}
+
+		#main {
+			display: flex;
+			flex-direction: row;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			margin: 0;
+			padding: 0;
+		}
+
+		#right-cont,
+		#left-cont {
+			display: flex;
+			flex-direction: column;
+		}
+
+		#left-cont {
+			padding: 5px;
+		}
+
+		#right-cont {
+			padding: 10px 5px;
+			flex-grow: 100;
+		}
+
+		#filter-cont {
+			display: grid;
+			place-items: start start;
+			grid-template-columns: auto auto;
+		}
+
+		label {
+			margin: 0;
+			padding: 0;
+		}
+
+		input.slider-input {
+			width: 230px;
+			height: 40px;
+			margin: 0px 10px;
+		}
+
+		svg#map {
+			background-color: black;
+		}
+	</style>
+</html>
